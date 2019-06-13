@@ -29,6 +29,8 @@ import java.util.LinkedList;
 
 /**
  * Sharding rule configuration.
+ *
+ * 分片规则配置类
  * 
  * @author zhangliang
  * @author maxiaoguang
@@ -37,22 +39,49 @@ import java.util.LinkedList;
 @Getter
 @Setter
 public final class ShardingRuleConfiguration implements RuleConfiguration {
-    
+
+    /**
+     * 表规则配置列表
+     */
     private Collection<TableRuleConfiguration> tableRuleConfigs = new LinkedList<>();
-    
+
+    /**
+     * 绑定表组列表
+     */
     private Collection<String> bindingTableGroups = new LinkedList<>();
-    
+
+    /**
+     * 表广播列表
+     */
     private Collection<String> broadcastTables = new LinkedList<>();
-    
+
+    /**
+     * 默认数据源名称
+     */
     private String defaultDataSourceName;
-    
+
+    /**
+     * 默认数据库分片策略配置
+     */
     private ShardingStrategyConfiguration defaultDatabaseShardingStrategyConfig;
-    
+
+    /**
+     * 默认数据表分片策略配置
+     */
     private ShardingStrategyConfiguration defaultTableShardingStrategyConfig;
-    
+
+    /**
+     * 默认主键生成器配置
+     */
     private KeyGeneratorConfiguration defaultKeyGeneratorConfig;
-    
+
+    /**
+     * 主从配置列表
+     */
     private Collection<MasterSlaveRuleConfiguration> masterSlaveRuleConfigs = new LinkedList<>();
-    
+
+    /**
+     * 加密规则配置
+     */
     private EncryptRuleConfiguration encryptRuleConfig;
 }
